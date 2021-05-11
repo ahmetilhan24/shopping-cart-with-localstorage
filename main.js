@@ -1,3 +1,4 @@
+var productItemsArray = [];
 //Add to localstorage product items
 function productAdd(product) {
     //product detail
@@ -34,4 +35,5 @@ function productRemove(product) {
     const itemR = localStorageItemsR.find(a => a.productCode === pCodeR);
     localStorageItemsR.splice(localStorageItemsR.indexOf(itemR), 1);
     localStorage.setItem("products", JSON.stringify(localStorageItemsR));
+    return;
 }
