@@ -27,7 +27,7 @@ const checkIsItem = (item: IItem): boolean => {
 };
 
 // Get storage
-const getStorage = () => {
+const getStorage = (): void => {
   const items: string | null = localStorage.getItem(STORAGE_KEY);
   if (typeof items === "string") {
     itemsData = JSON.parse(items);
@@ -39,9 +39,9 @@ const setStorage = (): void => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(itemsData));
 };
 
+//!FOR DEMO
 (() => {
   getStorage();
-  //////////////// FOR DEMO
   const addBtn = document.querySelectorAll(".add-to-cart");
   addBtn.forEach((item) => {
     item.addEventListener("click", (e: PointerEvent) => {
@@ -53,3 +53,4 @@ const setStorage = (): void => {
     });
   });
 })();
+//!FOR DEMO
