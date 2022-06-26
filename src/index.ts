@@ -6,7 +6,10 @@ const addItem = (item: IItem) => {
   if (oldItems.length) {
     //is declared?
     const isItem: boolean = oldItems.some((elem: IItem) => elem.id === item.id);
-    
+    if (isItem) {
+      // remove item
+    } else {
+    }
   }
 };
 
@@ -16,4 +19,8 @@ const getItems = (): [] => {
   if (typeof items === "string") {
     return JSON.parse(items);
   }
+};
+
+const setItems = (items: IItem[] | []): void => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 };
