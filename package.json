@@ -4,6 +4,7 @@
   "description": "Beta",
   "main": "main.js",
   "scripts": {
+    "build": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ahmetilhan24/shoping-cart-with-local-storage/issues"
   },
-  "homepage": "https://github.com/ahmetilhan24/shoping-cart-with-local-storage#readme"
+  "homepage": "https://github.com/ahmetilhan24/shoping-cart-with-local-storage#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
