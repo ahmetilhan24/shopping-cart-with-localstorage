@@ -1,0 +1,19 @@
+{
+  "name": "shoping-cart-with-local-storage",
+  "version": "1.0.0",
+  "description": "Beta",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmetilhan24/shoping-cart-with-local-storage.git"
+  },
+  "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmetilhan24/shoping-cart-with-local-storage/issues"
+  },
+  "homepage": "https://github.com/ahmetilhan24/shoping-cart-with-local-storage#readme"
+}
