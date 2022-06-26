@@ -1,37 +1,42 @@
 import IItem from "./types/IItem";
 import { STORAGE_KEY } from "./constants/storage.constants";
 
-const itemsData = [];
+let itemsData: IItem[] = [];
 
 // Add item
 const addItem = (item: IItem) => {
-  const oldItems = getStorage();
-  if (oldItems.length) {
-    //is declared?
-    const isItem: boolean = oldItems.some((elem: IItem) => elem.id === item.id);
-    if (isItem) {
-      // remove item
-    } else {
-    }
+  //is item
+  if (!checkIsItem(item)) {
+    itemsData.push(item);
+  } else {
+    const index = itemsData.findIndex((elem) => elem.id === item.id);
+    itemsData.splice(index, 1);
   }
+  setStorage();
 };
 
 // check is item
 
-const checkIsItem = () => {};
+const checkIsItem = (item: IItem): boolean => {
+  const isItem: boolean = itemsData.some((elem: IItem) => elem.id === item.id);
+  return isItem;
+};
+
 // Get storage
 const getStorage = () => {
   const items: string | null = localStorage.getItem(STORAGE_KEY);
   if (typeof items === "string") {
-    return JSON.parse(items);
+    itemsData = JSON.parse(items);
   }
 };
 
 // Set item -> to localstorage
-const setStorage = (items: IItem[] | []): void => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+const setStorage = (): void => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(itemsData));
 };
 
+console.log("aşlsdşlask");
+getStorage();
 //////////////// FOR DEMO
 const addBtn = document.querySelectorAll(".add-to-cart");
 addBtn.forEach((item) => {
@@ -39,6 +44,7 @@ addBtn.forEach((item) => {
     const target = e.currentTarget as HTMLElement;
     const dataId: string = target.getAttribute("data-id");
     if (dataId) {
+      addItem({ id: dataId });
     }
   });
 });
