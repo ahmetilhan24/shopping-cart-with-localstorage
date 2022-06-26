@@ -28,7 +28,7 @@ const checkIsItem = (item: IItem): boolean => {
 
 // Get storage
 const getStorage = (): void => {
-  const items: string | null = localStorage.getItem(STORAGE_KEY);
+  const items: string | null = localStorage?.getItem(STORAGE_KEY);
   if (typeof items === "string") {
     itemsData = JSON.parse(items);
   }
@@ -36,7 +36,7 @@ const getStorage = (): void => {
 
 // Set item -> to localstorage
 const setStorage = (): void => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(itemsData));
+  localStorage?.setItem(STORAGE_KEY, JSON.stringify(itemsData));
 };
 
 //!FOR DEMO
