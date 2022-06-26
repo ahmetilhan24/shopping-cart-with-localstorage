@@ -16,6 +16,9 @@ const addItem = (item: IItem) => {
   }
 };
 
+// check is item
+
+const checkIsItem = () => {};
 // Get storage
 const getStorage = () => {
   const items: string | null = localStorage.getItem(STORAGE_KEY);
@@ -24,18 +27,18 @@ const getStorage = () => {
   }
 };
 
-// Set item -> to localcstorage
+// Set item -> to localstorage
 const setStorage = (items: IItem[] | []): void => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 };
 
 //////////////// FOR DEMO
 const addBtn = document.querySelectorAll(".add-to-cart");
-if (addBtn instanceof HTMLElement) {
-  addBtn.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      console.log(e);
-    });
+addBtn.forEach((item) => {
+  item.addEventListener("click", (e: PointerEvent) => {
+    const target = e.currentTarget as HTMLElement;
+    const dataId: string = target.getAttribute("data-id");
+    if (dataId) {
+    }
   });
-}
-console.log(addBtn, "asljdklasj");
+});

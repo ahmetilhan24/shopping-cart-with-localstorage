@@ -1,16 +1,7 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "es5",
     "noImplicitAny": true,
-    "removeComments": true,
-    "noImplicitAny": false,
-    "rootDir": "./src",
-    "declaration": true,
-    "strict": true,
-    //"outDir": "./demo-vue-project/node_modules/persisted-state-vuex/dist",
-    "outDir": "./dist",
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*.ts"]
+    "target": "ES5",
+    "module": "ES2015"
+  }
 }
